@@ -4,10 +4,12 @@ import Navbar from "./Components/Navbar/Navbar";
 import Home from "./pages/Home/Home";
 import Favourites from "./pages/Favourites/Favourites";
 import Edit from "./pages/Edit/Edit";
+import Header from "./Components/Header/Header";
 
 function App() {
   return (
     <BrowserRouter>
+      <Header />
       <div className="App">
         <Navbar profileImage="../public/images.png" alt="Profile Picture" />
         <Routes>

@@ -57,10 +57,6 @@
   box-shadow: 3px 2px 3px rgba(0, 0, 0, 0.4);
 }
 
-.nav button.active .icon {
-  color: #ffffff;
-}
-
 .nav button:focus {
   outline: none;
   border: none;
@@ -94,9 +90,13 @@
   background-image: linear-gradient(135deg, #679cf6, #4072ee);
   border-top-right-radius: 5px;
   border-bottom-right-radius: 5px;
-  width: 110%;
+  width: 105%;
+  padding-top: 5px;
   margin-bottom: 10px;
   box-shadow: 3px 2px 3px rgba(0, 0, 0, 0.4);
+}
+.nav li.active .icon {
+  color: #ffffff;
 }
 
 .nav li.active hr {

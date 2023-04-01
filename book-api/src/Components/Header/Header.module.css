@@ -1,0 +1,30 @@
+.header {
+  position: fixed;
+  display: flex;
+  align-items: center;
+  top: 0;
+  left: 0;
+  right: 0;
+  background-color: #ffffff;
+  text-align: left;
+  font-size: 15px;
+  height: 60px;
+}
+
+.letters {
+  color: #8b201d;
+}
+
+@media (min-width: 800px) {
+  .header {
+    padding-left: 100px;
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 700px) {
+  .header {
+    padding-left: 25vw;
+    font-size: 1rem;
+  }
+}
