@@ -10,4 +10,4 @@ This was the first component I created, here I will list the blockers I found an
 
 3- The icon elements when active:
 
-- This one was tricky because the first icon does not have an <hr> element below it on the wireframe, so it behaves differently than the others when active. The best I managed to come up with was to add an extra class and making it invisible, but it's still not ideal. I could not use the "transform: scale()" property as it changed the whole icon's size and the wireframe only indicated a bigger width.
+- This one was tricky because the first icon does not have an <hr> element below it on the wireframe, so it behaves differently than the others when active. The best I managed to come up with was to add an extra class and make it invisible, but it's still not ideal. I could not use the "transform: scale()" property as it changed the whole icon's size and the wireframe only indicated a bigger width.

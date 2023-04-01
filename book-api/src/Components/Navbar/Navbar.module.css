@@ -68,8 +68,9 @@
 
 .nav hr {
   width: 2rem;
-  height: 1px;
+  height: 2px;
   background-color: #b8c5d3;
+  border: none;
   box-shadow: none;
   margin-left: auto;
   margin-right: auto;
