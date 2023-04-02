@@ -11,7 +11,7 @@ function App() {
     <BrowserRouter>
       <Header />
       <div className="App">
-        <Navbar profileImage="../public/images.png" alt="Profile Picture" />
+        <Navbar profileImage="/profile-pic.png" alt="Profile Picture" />
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/favourites" element={<Favourites />} />

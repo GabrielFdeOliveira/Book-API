@@ -1,0 +1,110 @@
+.container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #ffffff;
+  padding-left: 10px;
+  padding-right: 10px;
+  margin-bottom: 20px;
+  height: 3.25rem;
+}
+
+.bookInfo {
+  display: flex;
+  align-items: center;
+  flex: 1;
+}
+
+.bookTitleAuthorDiv {
+  display: flex;
+  align-items: center;
+  flex: 1;
+  gap: 10px;
+}
+
+.bookIcon {
+  color: #93b4bc;
+}
+.priceRatingDiv {
+  display: flex;
+  align-items: center;
+  gap: 30px;
+  margin-right: 10px;
+}
+
+.title {
+  font-size: 1.25rem;
+}
+
+.author {
+  font-size: 1rem;
+  font-weight: normal;
+  color: #5b5b5b;
+}
+
+.price {
+  font-size: 1rem;
+  font-weight: bold;
+}
+
+.rating {
+  display: flex;
+}
+
+.activeStar {
+  color: #f5a623;
+  fill: #f5a623;
+}
+
+.inactiveStar {
+  color: #ccc;
+}
+
+.favoriteButton {
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  outline: none;
+  fill: currentColor;
+}
+
+.favoriteIcon {
+  color: #93b4bc;
+  font-size: large;
+}
+
+.favoriteButton:hover .favoriteIcon {
+  color: #ff4081;
+}
+
+@media screen and (max-width: 768px) {
+  .container {
+    flex-direction: column;
+    height: auto;
+    justify-content: center;
+    margin-left: 70px;
+  }
+  .bookIcon {
+    display: none;
+  }
+  .bookTitleAuthorDiv {
+    flex-direction: column;
+  }
+  .title {
+    margin-top: 0px;
+  }
+  .author {
+    margin-top: -30px;
+  }
+  .bookInfo {
+    flex-direction: column;
+    justify-content: center;
+  }
+  .priceRatingDiv {
+    display: flex;
+    align-items: center;
+  }
+}
+
+@media screen and (min-width: 768px) {
+}

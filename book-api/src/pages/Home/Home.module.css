@@ -1,8 +1,10 @@
 .outter {
   margin-top: 50px;
+  z-index: 1;
 }
 .container {
   padding: 80px;
+  z-index: 1;
 }
 
 .title {
@@ -58,6 +60,7 @@
 
   .container {
     width: 100px;
+    z-index: 1;
   }
 
   .title {
