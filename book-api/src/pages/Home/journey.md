@@ -1,0 +1,5 @@
+As I progressed with the development of the app, I faced several challenges, especially with the styling. Initially, I spent a few hours refining the design of the components. However, I encountered issues with conflicting default styles, which prompted me to create custom media queries.
+
+One particular challenge I encountered was the wireframe, which did not provide sufficient information regarding the images. I assumed that the images were placeholders and not related to any specific book. Consequently, I decided to keep the images static and focus on the text instead. This led me to implement additional functionalities such as taking the user to their favourite books page or fetching the current best-selling books upon click.
+
+Despite the challenges, I found some innovative solutions that I am proud of. For instance, I used a negative margin to adjust the text alignment, increased the image size to 140%, and added an extra outer div to improve overall alignment. While the results are not perfect, I am satisfied with the progress I've made and with the things I learned.

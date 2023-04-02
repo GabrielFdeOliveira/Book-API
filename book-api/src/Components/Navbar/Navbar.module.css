@@ -46,6 +46,7 @@
 .nav button {
   border: none;
   background-color: transparent;
+  cursor: pointer;
 }
 
 .nav button.active {

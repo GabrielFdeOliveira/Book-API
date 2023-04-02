@@ -1,0 +1,76 @@
+.outter {
+  margin-top: 50px;
+}
+.container {
+  padding: 80px;
+}
+
+.title {
+  font-weight: bold;
+  text-align: left;
+  margin-bottom: 20px;
+}
+
+.title:hover {
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+.imageRow {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  margin-bottom: 40px;
+}
+.link {
+  text-decoration: none;
+  color: #213547;
+}
+
+.image {
+  width: 250px;
+  height: 150px;
+  object-fit: cover;
+  margin-bottom: 20px;
+  margin-right: 10px;
+}
+
+@media screen and (min-width: 600px) {
+  .outter {
+    /* Width added here so it doesn't override everything else */
+    width: 1000px;
+    margin-top: 100px;
+  }
+  .title {
+    font-size: 24px;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .imageRow {
+    flex-direction: column;
+    margin-top: 0;
+    width: 45vw;
+  }
+  .outter {
+    width: 300px;
+  }
+
+  .container {
+    width: 100px;
+  }
+
+  .title {
+    font-size: 19px;
+    text-align: left;
+    margin-top: 0px;
+    /* Margin negative to adjust the text alignment */
+    margin-left: -10px;
+    width: 73vw;
+  }
+  .image {
+    /*Image increased for a better placement*/
+    width: 140%;
+    margin-bottom: 10px;
+  }
+}
