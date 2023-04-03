@@ -27,15 +27,23 @@ const Card: React.FC<CardProps> = ({ title, author, price }) => {
     try {
       if (localStorage.getItem("favourites")) {
         const books = JSON.parse(localStorage.getItem("favourites") || "[]");
-        console.log(books);
-        books.push(newFavourite);
-        localStorage.setItem("favourites", JSON.stringify(books));
-        console.log("adding to favourite");
+
+        //If the .some method returns true, we know the book is already in our list
+        const isDuplicate = books.some(
+          (book: CardProps) => book.title === newFavourite.title
+        );
+
+        if (isDuplicate) {
+          Swal.fire("Book is already in your list");
+        } else {
+          books.push(newFavourite);
+          localStorage.setItem("favourites", JSON.stringify(books));
+          Swal.fire("Book added to your list");
+        }
       } else {
-        console.log("adding first favourite");
         localStorage.setItem("favourites", JSON.stringify([newFavourite]));
+        Swal.fire("Book added to your list");
       }
-      Swal.fire("Book added to your list");
     } catch (error) {
       console.error(error);
       Swal.fire({
@@ -51,7 +59,9 @@ const Card: React.FC<CardProps> = ({ title, author, price }) => {
       <div className={styles.bookInfo}>
         <div className={styles.bookTitleAuthorDiv}>
           <BsBook className={styles.bookIcon} />
-          <h3 className={styles.title}>{title + " "}</h3>
+          <h3 className={styles.title}>
+            {title.length > 30 ? title.slice(0, 27) + "..." : title}
+          </h3>
           <p className={styles.author}>{"by " + author}</p>
         </div>
         <div className={styles.priceRatingDiv}>

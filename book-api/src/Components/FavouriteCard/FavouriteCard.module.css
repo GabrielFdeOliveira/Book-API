@@ -1,0 +1,126 @@
+.favContainer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #ffffff;
+  padding-left: 10px;
+  padding-right: 10px;
+  margin-bottom: 20px;
+  height: 3.25rem;
+}
+
+.favBookInfo {
+  display: flex;
+  align-items: center;
+  flex: 1;
+}
+
+.favBookTitleAuthorDiv {
+  display: flex;
+  align-items: center;
+  flex: 1;
+  gap: 10px;
+}
+
+.favBookIcon {
+  color: #93b4bc;
+}
+
+.favTitle {
+  font-size: 1.25rem;
+}
+
+.favAuthor {
+  font-size: 1rem;
+  font-weight: normal;
+  color: #5b5b5b;
+}
+.favPriceRatingDiv {
+  display: flex;
+  align-items: center;
+  gap: 30px;
+  margin-right: 10px;
+}
+
+.favRating {
+  display: flex;
+}
+
+.favInactiveStar {
+  color: #ccc;
+}
+
+.favPrice {
+  font-size: 1rem;
+  font-weight: bold;
+}
+
+.favButtonsDiv {
+  display: flex;
+  background-color: transparent;
+  justify-content: center;
+  gap: 5px;
+  border: none;
+  outline: none;
+  fill: currentColor;
+}
+
+.favButtons {
+  background-color: transparent;
+  color: #5b5b5b;
+  border: none;
+  cursor: pointer;
+}
+.favButtons:hover {
+  background-color: #93b4bc;
+  border-radius: 3px;
+}
+
+.favIconHeart {
+  color: #93b4bc;
+  font-size: large;
+}
+
+@media screen and (max-width: 768px) {
+  .favContainer {
+    flex-direction: column;
+    height: auto;
+    justify-content: center;
+    margin-left: 70px;
+  }
+  .favBookIcon {
+    display: none;
+  }
+
+  .favIconHeart {
+    display: none;
+  }
+
+  .favBookTitleAuthorDiv {
+    flex-direction: column;
+  }
+  .favTitle {
+    margin-top: 0px;
+  }
+  .favAuthor {
+    margin-top: -30px;
+  }
+  .favBookInfo {
+    flex-direction: column;
+    justify-content: center;
+  }
+  .favPriceRatingDiv {
+    display: flex;
+    align-items: center;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .favContainer {
+    /* Width added here so it doesn't override everything else */
+    width: 1000px;
+  }
+  .title {
+    font-size: 24px;
+  }
+}

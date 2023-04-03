@@ -4,7 +4,6 @@ import React, { useEffect, useState } from "react";
 import styles from "./Home.module.css";
 import { Link } from "react-router-dom";
 import Card from "../../Components/Card/Card";
-import type { Favourite } from "../../pages/Favourites/Favourites";
 
 interface Book {
   title: string;
@@ -17,7 +16,6 @@ function Home() {
   //State to track if user clicked on Best Sellers text
   const [isBestSellers, setIsBestSellers] = useState(false);
   const [list, setList] = useState<Array<Book>>([]);
-  const [favourites, setFavourites] = useState<Favourite[]>([]);
 
   //Here I defined that the handleClick fn needs a parameter
   async function handleClick(searchTerm: string) {
@@ -63,6 +61,7 @@ function Home() {
   if (query || isBestSellers) {
     renderJSX = (
       <div className={styles.outter}>
+        <h2>New York Times Bestsellers</h2>
         <div>
           {/* //Slice the first 10 results from the list */}
           {list.slice(0, 10).map((book, index) => (

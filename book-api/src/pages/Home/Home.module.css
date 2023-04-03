@@ -2,6 +2,11 @@
   margin-top: 50px;
   z-index: 1;
 }
+.outter h2 {
+  font-weight: bold;
+  text-align: left;
+  margin-bottom: 20px;
+}
 .container {
   padding: 80px;
   z-index: 1;
@@ -62,7 +67,10 @@
     width: 100px;
     z-index: 1;
   }
-
+  .outter h2 {
+    margin-left: 10vw;
+    font-size: 19px;
+  }
   .title {
     font-size: 19px;
     text-align: left;

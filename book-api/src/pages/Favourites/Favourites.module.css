@@ -1,0 +1,35 @@
+.outter h2 {
+  text-align: left;
+}
+.favPageContainer {
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 100px;
+  margin-top: 10px;
+  padding: 50px;
+}
+@media screen and (max-width: 768px) {
+  .outter h2 {
+    padding-top: 5vh;
+    margin-left: 15vw;
+  }
+  .favPageContainer {
+    margin-top: 50px;
+    width: 70vw;
+  }
+  .favPageSearchBar {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+  }
+  .favPageSearchBar input {
+    width: 100vw;
+  }
+  .favPageSearchBar button {
+    width: 15%;
+  }
+  .favPageCardContainer {
+    margin-top: 5px;
+  }
+}
