@@ -2,6 +2,7 @@ import React from "react";
 import styles from "./FavouriteCard.module.css";
 import { AiFillHeart, AiOutlineStar, BsBook } from "react-icons/all";
 import CustomLink from "../CustomLink/CustomLink";
+import { Link } from "react-router-dom";
 
 type CardProps = {
   title: string;
@@ -42,15 +43,9 @@ const FavouriteCard: React.FC<
         </div>
       </div>
       <div className={styles.favButtonsDiv}>
-        <CustomLink
-          to={{
-            pathname: "/edit",
-            state: book,
-          }}
-          className={styles.link}
-        >
-          <button className={styles.favButtons}>Edit</button>
-        </CustomLink>
+        <Link to="/edit" state={{ hello: "world" }}>
+          Say Hello
+        </Link>
         <button
           className={styles.favButtons}
           onClick={() => handleDelete(index)}

@@ -13,8 +13,11 @@ type CustomLinkProps = LinkProps & {
 };
 
 const CustomLink: React.FC<CustomLinkProps> = ({ to, children, ...rest }) => {
+  const handleClick = () => {
+    console.log("CustomLink handleClick to:", to);
+  };
   return (
-    <Link to={to} {...rest}>
+    <Link to={to} onClick={handleClick} {...rest}>
       {children}
     </Link>
   );
