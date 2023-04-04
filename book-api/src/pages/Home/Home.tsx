@@ -1,6 +1,6 @@
 import axios from "axios";
 import Searchbar from "../../Components/Searchbar/Searchbar";
-import React, { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import styles from "./Home.module.css";
 import { Link } from "react-router-dom";
 import Card from "../../Components/Card/Card";
@@ -9,6 +9,7 @@ interface Book {
   title: string;
   author: string;
   price: string;
+  book_image: string;
 }
 
 function Home() {
@@ -46,7 +47,7 @@ function Home() {
       } else if (isBestSellers) {
         try {
           const response = await axios.get(
-            `https://api.nytimes.com/svc/books/v3/lists/current/hardcover-fiction.json?api-key=${API_KEY}`
+            `https://api.nytimes.com/svc/books/v3/lists/current/hardcover-fiction.json?api-key=${KEY}`
           );
           setList(response.data.results.books);
         } catch (error) {
@@ -57,7 +58,6 @@ function Home() {
 
     fetchBooks();
   }, [query, isBestSellers]);
-
   //variable initiated to store the JSX I want to render
   let renderJSX;
 
@@ -74,6 +74,7 @@ function Home() {
               title={book.title}
               author={book.author}
               price={book.price}
+              book_image={book.book_image}
             />
           ))}
         </div>

@@ -71,7 +71,21 @@
   border: none;
   cursor: pointer;
 }
+.favButtonEdit {
+  background-color: transparent;
+  color: #5b5b5b;
+  font-size: small;
+  text-decoration: none;
+  padding-left: 5px;
+  padding-right: 5px;
+  border: none;
+  cursor: pointer;
+}
 .favButtons:hover {
+  background-color: #93b4bc;
+  border-radius: 3px;
+}
+.favButtonEdit:hover {
   background-color: #93b4bc;
   border-radius: 3px;
 }
@@ -86,7 +100,7 @@
     flex-direction: column;
     height: auto;
     justify-content: center;
-    margin-left: 70px;
+    margin-left: 20px;
   }
   .favBookIcon {
     display: none;

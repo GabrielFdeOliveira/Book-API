@@ -24,7 +24,13 @@ const FavouriteCard: React.FC<
   //The price returned from the API has decimals, here I discard them
   const formattedPrice = parseFloat(price).toFixed();
 
-  const book: Book = { title, author, price, index, rating: 0 };
+  const book: Book = {
+    title,
+    author,
+    price,
+    index,
+    rating: 0,
+  };
 
   //Destructure the book property from the BookContext
   const { book: contextBook, setBook } = useContext(BookContext);
@@ -48,7 +54,7 @@ const FavouriteCard: React.FC<
       </div>
       <div className={styles.favButtonsDiv}>
         <Link
-          className={styles.favButtons}
+          className={styles.favButtonEdit}
           to="/edit"
           onClick={() => {
             setBook(book);

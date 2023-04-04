@@ -12,6 +12,7 @@ import type { Book } from "./Components/FavouriteCard/FavouriteCard";
 function App() {
   const [book, setBook] = useState<Book | null>(null);
 
+  //Function required to successfully update the default context value with the value stored in the book const at the FavouriteCard
   const updateBookContext = (newBook: Book | null) => {
     setBook(newBook);
   };

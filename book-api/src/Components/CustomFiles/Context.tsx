@@ -10,7 +10,7 @@ export const BookContext = createContext<BookContextType>({
   book: {
     title: "Book title",
     author: "Book Author",
-    price: "£20",
+    price: "0",
     index: 1,
     rating: 0,
   },

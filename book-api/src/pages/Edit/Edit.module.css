@@ -1,0 +1,131 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  width: 100%;
+  padding: 20px;
+  box-sizing: border-box;
+  border-radius: 10px;
+}
+
+.titleContainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  position: relative;
+  align-items: center;
+  width: 100%;
+  color: #ffffff;
+  opacity: 80%;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  margin-bottom: 20px;
+}
+
+.titleContainer::before {
+  content: "";
+  /*To cover the entire image */
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-color: black;
+  opacity: 0.5;
+  z-index: 1;
+  transition: opacity 0.3s ease-in-out;
+}
+
+.titleContainer:hover::before {
+  opacity: 0.3;
+}
+
+.titleAuthorDiv {
+  display: flex;
+  align-items: baseline;
+  z-index: 2;
+  color: white;
+}
+
+.title {
+  font-size: 24px;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.attribute {
+  color: #ffffff;
+  display: flex;
+  flex: 1;
+  width: 80%;
+  margin-bottom: 10px;
+}
+
+.attributeContainer {
+  display: flex;
+  flex-direction: column;
+}
+.attributeTitle {
+  background-color: #93b4bc;
+  padding-left: 10px;
+  padding-right: 10px;
+}
+
+.attributeValue {
+  font-weight: bold;
+  flex: 1;
+}
+
+.attributeValue {
+  border: none;
+}
+
+.attributeButton {
+  width: 20%;
+  margin-top: 2vh;
+  height: 4vh;
+  justify-content: left;
+  border-radius: 20px;
+  border: none;
+  color: #ffffff;
+  background-image: linear-gradient(135deg, #679cf6, #4072ee);
+}
+
+.attributeButton:hover {
+  scale: 1.02;
+  cursor: pointer;
+}
+@media (max-width: 768px) {
+  .container {
+    margin-left: 8vw;
+  }
+  .attributeButton {
+    width: 40%;
+  }
+  .title {
+    font-size: 32px;
+    margin-bottom: 20px;
+  }
+  .titleContainer {
+    font-size: small;
+  }
+  .titleAuthorDiv {
+    flex-direction: column;
+  }
+  .attribute {
+    margin-bottom: 20px;
+  }
+
+  .attributeTitle {
+    padding: 10px;
+  }
+}
+@media (min-width: 800px) {
+  .container {
+    min-width: 800px;
+  }
+
+  .titleContainer {
+    height: 200px;
+  }
+}

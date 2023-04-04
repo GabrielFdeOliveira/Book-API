@@ -34,7 +34,11 @@ const Card: React.FC<CardProps> = ({ title, author, price }) => {
         );
 
         if (isDuplicate) {
-          Swal.fire("Book is already in your list");
+          Swal.fire({
+            icon: "error",
+            title: "Oops...",
+            text: "This book is already in your list.",
+          });
         } else {
           books.push(newFavourite);
           localStorage.setItem("favourites", JSON.stringify(books));
