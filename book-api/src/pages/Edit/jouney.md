@@ -2,4 +2,4 @@ I was unable to access the "state" property of the "location" object in my code.
 
 I tested the "CustomLink" component on its own and confirmed that it was indeed sending the "state" property with the correct data that I needed. However, for some reason, it arrives as "null" in the "Edit" page. The other properties of the object are being passed correctly.
 
-Also tested the "book" object at the FavouriteCard component and it hold the data I was expecting it too, now I just can't think in nothing else to try.
+Also tested the "book" object at the FavouriteCard component and it hold the data I was expecting it too, now I just can't think in nothing else to try. I even tried to overhaul the whole routing system in Vite. I got rid of the App.tsx file and changed it to use createBrowserROuter, but unfortunately, this did not yield any positive results. The issue persists, and I'm still unable to properly access the location state in the Edit page.

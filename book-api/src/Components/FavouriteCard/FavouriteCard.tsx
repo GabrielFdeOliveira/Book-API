@@ -43,8 +43,8 @@ const FavouriteCard: React.FC<
         </div>
       </div>
       <div className={styles.favButtonsDiv}>
-        <Link to="/edit" state={{ hello: "world" }}>
-          Say Hello
+        <Link className={styles.favButtons} to="/edit" state={{ book: book }}>
+          Edit
         </Link>
         <button
           className={styles.favButtons}
