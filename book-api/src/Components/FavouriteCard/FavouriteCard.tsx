@@ -1,8 +1,8 @@
-import React from "react";
+import React, { useContext } from "react";
 import styles from "./FavouriteCard.module.css";
 import { AiFillHeart, AiOutlineStar, BsBook } from "react-icons/all";
-import CustomLink from "../CustomLink/CustomLink";
 import { Link } from "react-router-dom";
+import { BookContext } from "../CustomFiles/Context";
 
 type CardProps = {
   title: string;
@@ -10,11 +10,12 @@ type CardProps = {
   price: string;
 };
 
-type Book = {
+export type Book = {
   title: string;
   author: string;
   price: string;
   index: number;
+  rating: number;
 };
 
 const FavouriteCard: React.FC<
@@ -23,7 +24,10 @@ const FavouriteCard: React.FC<
   //The price returned from the API has decimals, here I discard them
   const formattedPrice = parseFloat(price).toFixed();
 
-  const book: Book = { title, author, price, index };
+  const book: Book = { title, author, price, index, rating: 0 };
+
+  //Destructure the book property from the BookContext
+  const { book: contextBook, setBook } = useContext(BookContext);
 
   return (
     <div className={styles.favContainer}>
@@ -43,7 +47,13 @@ const FavouriteCard: React.FC<
         </div>
       </div>
       <div className={styles.favButtonsDiv}>
-        <Link className={styles.favButtons} to="/edit" state={{ book: book }}>
+        <Link
+          className={styles.favButtons}
+          to="/edit"
+          onClick={() => {
+            setBook(book);
+          }}
+        >
           Edit
         </Link>
         <button

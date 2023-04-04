@@ -1,18 +1,16 @@
-import React from "react";
-// import type { Book } from "../../Components/FavouriteCard/FavouriteCard";
-import { useLocation } from "react-router-dom";
+import React, { useContext } from "react";
+import { BookContext } from "../../Components/CustomFiles/Context";
 
 const Edit: React.FC = () => {
-  const location = useLocation();
-  console.log("location object in Edit component: ", location);
-  // const { title, author, price, index } = location.state;
+  const { book } = useContext(BookContext);
 
   return (
     <div>
-      {/* <h1>Edit Book: {title}</h1>
-      <p>Author: {author}</p>
-      <p>Price: {price}</p>
-      <p>Index: {index}</p> */}
+      <h1>Edit Book: {book?.title}</h1>
+      <p>Author: {book?.author}</p>
+      <p>Price: {book?.price}</p>
+      <p>Index: {book?.index}</p>
+      <p>Rating: {book?.rating}</p>
     </div>
   );
 };

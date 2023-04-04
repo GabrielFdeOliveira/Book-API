@@ -24,7 +24,11 @@ function Home() {
     setIsBestSellers(false);
   }
 
-  const API_KEY = "FmSd2amCznAGQuFGNS1SPcLOydUM3gZN";
+  const KEY = "FmSd2amCznAGQuFGNS1SPcLOydUM3gZN";
+
+  /*Attempt to use a .env/.env.local file to protect the API key but process keep coming back as undefined, even after installing the dotenv package and the types '@types/node'
+  
+  const KEY = process.env.API_KEY;*/
 
   useEffect(() => {
     //To avoid fetch on page load, check it variables have value before call fn
@@ -32,7 +36,7 @@ function Home() {
       if (query) {
         try {
           const response = await axios.get(
-            `https://api.nytimes.com/svc/books/v3/lists/best-sellers/history.json?api-key=${API_KEY}&title=${query}`
+            `https://api.nytimes.com/svc/books/v3/lists/best-sellers/history.json?api-key=${KEY}&title=${query}`
           );
           setList(response.data.results);
         } catch (error) {

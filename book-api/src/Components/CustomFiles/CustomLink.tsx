@@ -3,7 +3,7 @@ import { Link, LinkProps } from "react-router-dom";
 type CustomLinkProps = LinkProps & {
   to: {
     pathname: string;
-    state: {
+    book: {
       title: string;
       author: string;
       price: string;
