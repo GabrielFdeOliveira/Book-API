@@ -72,24 +72,29 @@ export default function Favourites() {
   return (
     <div className={styles.outter}>
       <h2>Favourites</h2>
-      <div className={styles.favPageContainer}>
-        <div className={styles.favPageSearchBar}>
-          <Searchbar handleClick={handleSearch} />
+      {favourites.length === 0 && (
+        <p>You have no books on your favourites list yet.</p>
+      )}
+      {favourites.length > 0 && (
+        <div className={styles.favPageContainer}>
+          <div className={styles.favPageSearchBar}>
+            <Searchbar handleClick={handleSearch} />
+          </div>
+          <div className={styles.favPageCardContainer}>
+            {favourites.map((favourite, index) => (
+              <FavouriteCard
+                key={index}
+                title={favourite.title}
+                author={favourite.author}
+                price={favourite.price}
+                rating={favourite.rating}
+                index={index}
+                handleDelete={handleDelete}
+              />
+            ))}
+          </div>
         </div>
-        <div className={styles.favPageCardContainer}>
-          {favourites.map((favourite, index) => (
-            <FavouriteCard
-              key={index}
-              title={favourite.title}
-              author={favourite.author}
-              price={favourite.price}
-              rating={favourite.rating}
-              index={index}
-              handleDelete={handleDelete}
-            />
-          ))}
-        </div>
-      </div>
+      )}
     </div>
   );
 }
