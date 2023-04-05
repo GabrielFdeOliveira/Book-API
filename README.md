@@ -1,9 +1,7 @@
-
 # NYT Best seller books API
 
 This is a frontend project that leverages the NYT Books API and is built using TypeScript and React within the Vite framework. Its core functionality enables users to either search for a specific book through the search bar or fetch the current list of best-selling books, and then add them to their personal favorites list. While the browser's memory is currently used to persist data between sessions, a proper backend may be added in the future.
 
-As the API does not provide a "rating" for books, I have implemented a randomized way to display it and have plans to enable users to give their own rating for books in their personal list. Additionally, the API returns 0 for all prices, and I am working towards making it possible to edit this value as well.
+As the API does not provide a "rating" for books, so I have implemented a randomized way to display it and once the user add a book to its personal list he can give his own rating to the title. On a similar line, the API returns 0 for all prices, so I also gave the user the ability to edit the price once the item is on it's personal list.
 
-This project has pushed me out of my comfort zone, and I have had to work hard to find solutions to persist data and creatively style the application. While there is room for improvement, this project has the potential to grow, and I have done my best given my current skills and abilities.
-
+With additional time, I would enhance the app by introducing a pagination feature and improving the responsiveness. Additionally, I would like to include test cases to ensure that the app functions correctly under different conditions. However, I am satisfied with the current state of the app as it meets the minimum viable product (MVP) requirements and is designed to be scalable. This project is the biggest I ever did individually and it has pushed me completely out of my comfort zone, I have had to give my very best to find solutions to persist data and creatively style the application. While there is obviously room for improvement, this project has the potential to grow, and I am proud of what I have accomplished given my current skills and abilities.
