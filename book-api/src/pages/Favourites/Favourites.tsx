@@ -8,15 +8,20 @@ type Favourite = {
   title: string;
   author: string;
   price: string;
+  rating: number;
 };
 
 export default function Favourites() {
   const [favourites, setFavourites] = useState<Favourite[]>([]);
 
   useEffect(() => {
-    const storedFavourites = localStorage.getItem("favourites");
-    if (storedFavourites) {
-      setFavourites(JSON.parse(storedFavourites));
+    try {
+      const storedFavourites = localStorage.getItem("favourites");
+      if (storedFavourites) {
+        setFavourites(JSON.parse(storedFavourites));
+      }
+    } catch (error) {
+      console.error("Error retrieving favourites from localStorage: ", error);
     }
   }, []);
 
@@ -78,6 +83,7 @@ export default function Favourites() {
               title={favourite.title}
               author={favourite.author}
               price={favourite.price}
+              rating={favourite.rating}
               index={index}
               handleDelete={handleDelete}
             />

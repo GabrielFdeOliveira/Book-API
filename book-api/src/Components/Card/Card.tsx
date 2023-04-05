@@ -13,15 +13,16 @@ type CardProps = {
   title: string;
   author: string;
   price: string;
+  rating: number;
 };
 
-const Card: React.FC<CardProps> = ({ title, author, price }) => {
+const Card: React.FC<CardProps> = ({ title, author, price, rating }) => {
   //Since there is no rating property on the response obj I randomize it here
   const randomRating = Math.floor(Math.random() * 5) + 1;
 
   //The price returned from the API has decimals, here I discard them
   const formattedPrice = parseFloat(price).toFixed();
-  const book = { title, author, price };
+  const book = { title, author, price, rating };
 
   const handleFavourite = (newFavourite: Favourite) => {
     try {

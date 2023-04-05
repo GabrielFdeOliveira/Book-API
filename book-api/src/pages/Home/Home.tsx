@@ -9,7 +9,7 @@ interface Book {
   title: string;
   author: string;
   price: string;
-  book_image: string;
+  rating: number;
 }
 
 function Home() {
@@ -65,7 +65,7 @@ function Home() {
   if (query || isBestSellers) {
     renderJSX = (
       <div className={styles.outter}>
-        <h2>New York Times Bestsellers</h2>
+        <h2>Top 10 Bestsellers</h2>
         <div>
           {/* //Slice the first 10 results from the list */}
           {list.slice(0, 10).map((book, index) => (
@@ -74,7 +74,7 @@ function Home() {
               title={book.title}
               author={book.author}
               price={book.price}
-              book_image={book.book_image}
+              rating={book.rating}
             />
           ))}
         </div>

@@ -90,6 +90,14 @@
   border-radius: 3px;
 }
 
+.favActiveStar {
+  color: #f5a623;
+  fill: #f5a623;
+}
+.favInactiveStar {
+  color: #ccc;
+}
+
 .favIconHeart {
   color: #93b4bc;
   font-size: large;

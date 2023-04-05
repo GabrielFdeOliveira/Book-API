@@ -1,6 +1,11 @@
 import React, { useContext } from "react";
 import styles from "./FavouriteCard.module.css";
-import { AiFillHeart, AiOutlineStar, BsBook } from "react-icons/all";
+import {
+  AiFillHeart,
+  AiOutlineStar,
+  AiFillStar,
+  BsBook,
+} from "react-icons/all";
 import { Link } from "react-router-dom";
 import { BookContext } from "../CustomFiles/Context";
 
@@ -8,6 +13,7 @@ type CardProps = {
   title: string;
   author: string;
   price: string;
+  rating: number;
 };
 
 export type Book = {
@@ -20,7 +26,7 @@ export type Book = {
 
 const FavouriteCard: React.FC<
   CardProps & { index: number; handleDelete: (index: number) => void }
-> = ({ title, author, price, index, handleDelete }) => {
+> = ({ title, author, price, index, rating, handleDelete }) => {
   //The price returned from the API has decimals, here I discard them
   const formattedPrice = parseFloat(price).toFixed();
 
@@ -35,6 +41,14 @@ const FavouriteCard: React.FC<
   //Destructure the book property from the BookContext
   const { book: contextBook, setBook } = useContext(BookContext);
 
+  const ratingStars = [...Array(5)].map((_, index) =>
+    index < rating ? (
+      <AiFillStar key={index} className={styles.favActiveStar} />
+    ) : (
+      <AiOutlineStar key={index} className={styles.favInactiveStar} />
+    )
+  );
+
   return (
     <div className={styles.favContainer}>
       <div className={styles.favBookInfo}>
@@ -45,11 +59,7 @@ const FavouriteCard: React.FC<
         </div>
         <div className={styles.favPriceRatingDiv}>
           <p className={styles.favPrice}>{formattedPrice + " GBP"}</p>
-          <div className={styles.favRating}>
-            {[...Array(5)].map((_, index) => (
-              <AiOutlineStar key={index} className={styles.favInactiveStar} />
-            ))}
-          </div>
+          <div className={styles.favRating}>{ratingStars}</div>
         </div>
       </div>
       <div className={styles.favButtonsDiv}>

@@ -53,6 +53,15 @@
   margin-bottom: 10px;
 }
 
+.author {
+  margin-left: 10px;
+}
+
+.attributeContainer {
+  display: flex;
+  flex-direction: column;
+}
+
 .attribute {
   color: #ffffff;
   display: flex;
@@ -61,22 +70,15 @@
   margin-bottom: 10px;
 }
 
-.attributeContainer {
-  display: flex;
-  flex-direction: column;
-}
 .attributeTitle {
   background-color: #93b4bc;
   padding-left: 10px;
   padding-right: 10px;
 }
 
-.attributeValue {
+.inputField {
   font-weight: bold;
-  flex: 1;
-}
-
-.attributeValue {
+  min-width: 200px;
   border: none;
 }
 
@@ -91,6 +93,14 @@
   background-image: linear-gradient(135deg, #679cf6, #4072ee);
 }
 
+.returnText {
+  margin-top: 80px;
+}
+
+.link {
+  color: #93b4bc;
+}
+
 .attributeButton:hover {
   scale: 1.02;
   cursor: pointer;
@@ -103,11 +113,13 @@
     width: 40%;
   }
   .title {
-    font-size: 32px;
+    font-size: 15px;
     margin-bottom: 20px;
   }
   .titleContainer {
     font-size: small;
+    margin: auto;
+    padding: auto;
   }
   .titleAuthorDiv {
     flex-direction: column;
