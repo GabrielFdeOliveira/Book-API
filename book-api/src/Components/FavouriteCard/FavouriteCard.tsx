@@ -9,11 +9,13 @@ import {
 import { Link } from "react-router-dom";
 import { BookContext } from "../CustomFiles/Context";
 
-type CardProps = {
+type FavCardProps = {
   title: string;
   author: string;
   price: string;
   rating: number;
+  index: number;
+  handleDelete: (index: number) => void;
 };
 
 export type Book = {
@@ -24,9 +26,14 @@ export type Book = {
   rating: number;
 };
 
-const FavouriteCard: React.FC<
-  CardProps & { index: number; handleDelete: (index: number) => void }
-> = ({ title, author, price, index, rating, handleDelete }) => {
+const FavouriteCard: React.FC<FavCardProps> = ({
+  title,
+  author,
+  price,
+  index,
+  rating,
+  handleDelete,
+}) => {
   //The price returned from the API has decimals, here I discard them
   const formattedPrice = parseFloat(price).toFixed();
 

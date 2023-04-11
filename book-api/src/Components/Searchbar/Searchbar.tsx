@@ -2,11 +2,11 @@ import React, { useState } from "react";
 import { AiOutlineSearch } from "react-icons/ai";
 import style from "./Searchbar.module.css";
 
-type Props = {
+type SearchProps = {
   handleClick: (searchTerm: string) => void;
 };
 
-const Searchbar: React.FC<Props> = ({ handleClick }) => {
+const Searchbar: React.FC<SearchProps> = ({ handleClick }) => {
   //State to hold the search term
   const [searchTerm, setSearchTerm] = useState<string>("");
 

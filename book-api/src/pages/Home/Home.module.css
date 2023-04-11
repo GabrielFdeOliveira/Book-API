@@ -1,6 +1,5 @@
 .outter {
   margin-top: 50px;
-  z-index: 1;
 }
 .outter h2 {
   font-weight: bold;
@@ -9,7 +8,6 @@
 }
 .container {
   padding: 80px;
-  z-index: 1;
 }
 
 .title {
@@ -25,7 +23,6 @@
 
 .imageRow {
   display: flex;
-  flex-wrap: wrap;
   justify-content: space-between;
   margin-bottom: 40px;
 }
@@ -37,7 +34,6 @@
 .image {
   width: 250px;
   height: 150px;
-  object-fit: cover;
   margin-bottom: 20px;
   margin-right: 10px;
 }
@@ -59,25 +55,15 @@
     margin-top: 0;
     width: 45vw;
   }
-  .outter {
-    width: 300px;
-  }
-
-  .container {
-    width: 100px;
-    z-index: 1;
-  }
   .outter h2 {
-    margin-left: 10vw;
-    font-size: 19px;
+    margin-left: 40px;
+    font-size: 18px;
   }
   .title {
     font-size: 19px;
     text-align: left;
     margin-top: 0px;
-    /* Margin negative to adjust the text alignment */
-    margin-left: -10px;
-    width: 73vw;
+    width: 70vw;
   }
   .image {
     /*Image increased for a better placement*/

@@ -11,7 +11,7 @@ type Favourite = {
   rating: number;
 };
 
-export default function Favourites() {
+const Favourites: React.FC = () => {
   const [favourites, setFavourites] = useState<Favourite[]>([]);
 
   useEffect(() => {
@@ -43,7 +43,7 @@ export default function Favourites() {
         text: "This action cannot be undone.",
         icon: "warning",
         showCancelButton: true,
-        confirmButtonColor: "#2eba33",
+        confirmButtonColor: "#28a52d",
         cancelButtonColor: "#d33",
         confirmButtonText: "Yes, delete it!",
       }).then((result) => {
@@ -72,14 +72,12 @@ export default function Favourites() {
   return (
     <div className={styles.outter}>
       <h2>Favourites</h2>
-      {favourites.length === 0 && (
+      {favourites.length === 0 ? (
         <p>You have no books on your favourites list yet.</p>
-      )}
-      {favourites.length > 0 && (
+      ) : (
         <div className={styles.favPageContainer}>
-          <div className={styles.favPageSearchBar}>
-            <Searchbar handleClick={handleSearch} />
-          </div>
+          <Searchbar handleClick={handleSearch} />
+          <div className={styles.favPageSearchBar}></div>
           <div className={styles.favPageCardContainer}>
             {favourites.map((favourite, index) => (
               <FavouriteCard
@@ -97,5 +95,6 @@ export default function Favourites() {
       )}
     </div>
   );
-}
+};
+export default Favourites;
 export type { Favourite };

@@ -110,7 +110,7 @@ const Edit: React.FC = () => {
           />
         </div>
       </div>
-      <button className={styles.attributeButton} onClick={handleSaveChanges}>
+      <button className={styles.updateButton} onClick={handleSaveChanges}>
         UPDATE
       </button>
       <div className={styles.returnText}>

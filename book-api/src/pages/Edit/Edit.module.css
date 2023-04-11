@@ -82,7 +82,7 @@
   border: none;
 }
 
-.attributeButton {
+.updateButton {
   width: 20%;
   margin-top: 2vh;
   height: 4vh;
@@ -101,7 +101,7 @@
   color: #93b4bc;
 }
 
-.attributeButton:hover {
+.updateButton:hover {
   scale: 1.02;
   cursor: pointer;
 }
@@ -109,7 +109,7 @@
   .container {
     margin-left: 8vw;
   }
-  .attributeButton {
+  .updateButton {
     width: 40%;
   }
   .title {

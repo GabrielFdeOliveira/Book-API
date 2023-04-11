@@ -12,7 +12,7 @@ interface Book {
   rating: number;
 }
 
-function Home() {
+const Home: React.FC = () => {
   const [query, setQuery] = useState("");
   //State to track if user clicked on Best Sellers text
   const [isBestSellers, setIsBestSellers] = useState(false);
@@ -32,7 +32,6 @@ function Home() {
   const KEY = process.env.API_KEY;*/
 
   useEffect(() => {
-    //To avoid fetch on page load, check it variables have value before call fn
     const fetchBooks = async () => {
       if (query) {
         try {
@@ -43,7 +42,6 @@ function Home() {
         } catch (error) {
           console.error(error);
         }
-        //I needed try catch block because the response obj is different depending on the type of query (per searchTerm or for Best sellers)
       } else if (isBestSellers) {
         try {
           const response = await axios.get(
@@ -84,7 +82,7 @@ function Home() {
     renderJSX = (
       <div className={styles.container}>
         <h2 className={styles.title} onClick={() => setIsBestSellers(true)}>
-          New York Times Bestsellers
+          NYT Bestsellers
         </h2>
         <div className={styles.imageRow}>
           <img
@@ -134,6 +132,6 @@ function Home() {
       {renderJSX}
     </div>
   );
-}
+};
 
 export default Home;

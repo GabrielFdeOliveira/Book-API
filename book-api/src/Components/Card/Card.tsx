@@ -27,10 +27,12 @@ const Card: React.FC<CardProps> = ({ title, author, price, rating }) => {
   const handleFavourite = (newFavourite: Favourite) => {
     try {
       if (localStorage.getItem("favourites")) {
-        const books = JSON.parse(localStorage.getItem("favourites") || "[]");
+        const locallyStoredBooks = JSON.parse(
+          localStorage.getItem("favourites") || "[]"
+        );
 
         //If the .some method returns true, we know the book is already in our list
-        const isDuplicate = books.some(
+        const isDuplicate = locallyStoredBooks.some(
           (book: CardProps) => book.title === newFavourite.title
         );
 
@@ -41,8 +43,11 @@ const Card: React.FC<CardProps> = ({ title, author, price, rating }) => {
             text: "This book is already in your list.",
           });
         } else {
-          books.push(newFavourite);
-          localStorage.setItem("favourites", JSON.stringify(books));
+          locallyStoredBooks.push(newFavourite);
+          localStorage.setItem(
+            "favourites",
+            JSON.stringify(locallyStoredBooks)
+          );
           Swal.fire("Book added to your list");
         }
       } else {
